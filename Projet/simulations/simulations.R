@@ -1,3 +1,5 @@
+library(Projet)
+
 A <- function(h){
   if (h >= 0 & h <= 2) return(100*h^2)
   else return(400*(h-1))
