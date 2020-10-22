@@ -13,7 +13,7 @@ height(h, hmax, v, ftn)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{h}{
-a numeric vector
+a scalar or a numeric vector
 }
   \item{hmax}{
 a scalar
@@ -26,7 +26,7 @@ a function which returns the cross-sectionnal aera of the dam for a given height
 }
 }
 \details{
-Computes the height of water contained by the dam from a given current level of water h and an amount of change of the volume of water v
+Computes the height of water contained by the dam from a given current level of water h and an amount of change of the volume of water v.
 }
 \value{
 A numeric vector of the same size as h

@@ -24,7 +24,7 @@ a scalar
 }
 \details{
 Newton1d implements the Newton method for finding a root of f ;
-x0 is the initial value of the algorithm which computes iteratively a sequence that can converge to a solution of the equation f(x) = 0
+x0 is the initial value of the algorithm which computes iteratively a sequence that can converge to a solution of the equation f(x) = 0.
 }
 \value{
 'Stop' if the algorithm doesn't converge or a scalar x such that f(x) is bounded by epsilon

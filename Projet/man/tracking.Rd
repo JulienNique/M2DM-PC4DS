@@ -13,7 +13,7 @@ tracking(h1, hmax, ftn, alpha, beta, v)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{h1}{
-a scalar
+a scalar representing the initial level of the dam
 }
   \item{hmax}{
 a scalar
@@ -22,20 +22,21 @@ a scalar
 a function which returns the cross-sectionnal aera of the dam for a given height
 }
   \item{alpha}{
-a scalar
+a scalar representing the volume of water taken from the dam for use per day
 }
   \item{beta}{
-a scalar between 0 and 1
+a positive scalar representing a coefficient such that beta*ftn(t) is the volume of water lost due to evaporation during day t
 }
   \item{v}{
-a numeric vector
+a numeric vector (of size 99) representing the volume of rain falling into the catchment for day 1 to 99
 }
 }
 \details{
 
 }
 \value{
-Tracking returns a numeric vector h of size 100 where h[t] is the level of water contained by the dam at day t
+Tracking returns a numeric vector h of size 100 where h[t] is the level of water contained by the dam at day t.
+
 }
 \references{
 %% ~put references to the literature/web site here ~

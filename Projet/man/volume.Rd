@@ -13,7 +13,7 @@ volume(h, hmax, ftn, [cl])
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{h}{
-a numeric vector
+a scalar or a numeric vector
 }
   \item{hmax}{
 a scalar
@@ -27,7 +27,7 @@ an object of class "cluster"
 
 }
 \details{
-For each height in vector h, the function volume computes the height of water contained by the dam when it is filled to level h
+For each height h[i] in vector h, the function volume computes the volume of water contained by the dam when it is filled to level h[i] <= hmax. It returns 0 if h[i] < 0 and Vmax = volume(hmax, hmax, ftn) otherwise.
 }
 \value{
 A numeric vector of the same size as h
