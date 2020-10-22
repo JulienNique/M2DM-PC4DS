@@ -1,0 +1,31 @@
+---
+title: "Parallel Computing"
+author: "Julien Nique"
+date: "30 septembre 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<center> <h1> Devoir Obligatoire n°2 </h1> </center> <br><br>
+
+Pour simuler un couple de valeurs $(u,v)$ , on peut commencer par simuler la variable aléatoire $U$ suivant la loi uniforme sur l'intervalle $[0,1]$ puis simuler la variable aléatoire $V$ suivant la loi uniforme sur l'intervalle $[0,(1 - u^{\frac{1}{k}})^{k}]$.
+La fonction simu ci-dessous réalise $n$ simulations par cette métode.
+
+```{r}
+simu <- function(k, n){
+  u <- runif(min = 0, max = 1, n = n)
+  v= lapply(u, function(u){runif(min = 0, max = (1 - u^(1/k))^k, n = 1)})
+  return (array(data = c(u,v), dim = c(n,2)))
+}
+
+plot(simu(2,10000))
+```
+
+```{r}
+library(microbenchmark)
+microbenchmark(simu(2, 10000), simu(3, 10000), simu(5, 10000), simu(10, 10000))
+```
+Les temps moyens d'exécution de la fonction simu ne varient pas significativement quand la valeur du paramètre $k$ augmente.
